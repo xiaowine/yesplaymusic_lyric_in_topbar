@@ -1,0 +1,19 @@
+{
+  "description": "YesplayMusic lyric output in gnome top bar.",
+  "name": "Ylyb",
+  "shell-version": [
+    "3.30.2",
+    "3.36",
+    "3.38",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44"
+  ],
+  "url": "https://github.com/xiaowine/Ylyb",
+  "uuid": "Ylyb@xiaowine.github.io",
+  "version": 1,
+  "settings-schema": "org.gnome.shell.extensions.executor"
+
+}
