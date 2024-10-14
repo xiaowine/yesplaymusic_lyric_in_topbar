@@ -1,0 +1,17 @@
+<schemalist>
+  <schema id="org.gnome.shell.extensions.ylyb" path="/org/gnome/shell/extensions/ylyb/">
+    <!-- Time Interval setting -->
+    <key name="time-interval" type="i">
+      <default>1000</default>
+      <summary>Time Interval</summary>
+      <description>Set the time interval in milliseconds.</description>
+    </key>
+
+    <!-- Logging Enabled setting -->
+    <key name="logging-enabled" type="b">
+      <default>false</default>
+      <summary>Enable Logging</summary>
+      <description>Turn on or off the logging for the extension.</description>
+    </key>
+  </schema>
+</schemalist>

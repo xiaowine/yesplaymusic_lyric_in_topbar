@@ -1,9 +1,0 @@
-<schemalist>
-  <schema id="org.gnome.shell.extensions.executor" path="/org/gnome/shell/extensions/executor/">
-    <key name="time-interval" type="i">
-      <default>1000</default>
-      <summary>Time Interval</summary>
-      <description>Set the time interval in milliseconds.</description>
-    </key>
-  </schema>
-</schemalist>
