@@ -125,7 +125,7 @@ class MusicPlayer {
     const [iface, changedProps] = parameters.deep_unpack();
     if (iface === "org.mpris.MediaPlayer2.Player") {
       const playbackStatus = changedProps["PlaybackStatus"]?.deep_unpack();
-      this.isPlaying = playbackStatus === "Playing";
+      this.isPlaying = playbackStatus !== "Paused";
       this.settings.logMessage(`Playback status changed: ${playbackStatus}`);
       if (this.isPlaying) {
         this.start();
