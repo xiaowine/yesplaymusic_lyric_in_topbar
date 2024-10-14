@@ -68,7 +68,7 @@ class MusicPlayer {
         this.isPlaying = false;
         this.httpClient = new HttpClient();
         this.bus = Gio.bus_get_sync(Gio.BusType.SESSION, null);
-        this.settings = ExtensionUtils.getSettings("org.gnome.shell.extensions.executor");
+        this.settings = ExtensionUtils.getSettings("org.gnome.shell.extensions.ylyb");
         this.settings.connect("changed::time-interval", () => this.updateInterval());
         this.updateInterval();
         this.subscribeToMPRIS();
@@ -189,12 +189,13 @@ class MusicPlayer {
 }
 
 function init() {
-    musicPlayer = new MusicPlayer();
+    // No object creation here, only static resources initialization
 }
 
 function enable() {
+    musicPlayer = new MusicPlayer();
     box = new St.BoxLayout({reactive: true});
-    label = new St.Label({y_expand: true, y_align: 2});
+    label = new St.Label({y_expand: true, y_align: Clutter.ActorAlign.CENTER});
     box.add(label);
     Main.panel._centerBox.add(box);
     musicPlayer.start();
@@ -212,31 +213,11 @@ function disable() {
         Main.panel._centerBox.remove_child(box);
         box = null;
     }
-    musicPlayer.stop();
-}
-
-function init() {
-    musicPlayer = new MusicPlayer();
-}
-
-function enable() {
-    box = new St.BoxLayout({reactive: true});
-    label = new St.Label({y_expand: true, y_align: 2});
-    box.add(label);
-    Main.panel._centerBox.add(box);
-    musicPlayer.start();
-    box.connect("button-press-event", () => {
-        try {
-            GLib.spawn_command_line_async("yesplaymusic");
-        } catch (error) {
-            log(`Error opening yesplaymusic: ${error.message}`);
-        }
-    });
-}
-
-function disable() {
-    Main.panel._centerBox.remove_child(box);
-    box = null;
-    musicPlayer = null;
-    label = null;
+    if (musicPlayer) {
+        musicPlayer.stop();
+        musicPlayer = null;
+    }
+    if (label) {
+        label = null;
+    }
 }

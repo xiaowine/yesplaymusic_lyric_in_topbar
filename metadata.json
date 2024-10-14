@@ -14,6 +14,6 @@
   "url": "https://github.com/xiaowine/Ylyb",
   "uuid": "Ylyb@xiaowine.github.io",
   "version": 1,
-  "settings-schema": "org.gnome.shell.extensions.executor"
+  "settings-schema": "org.gnome.shell.extensions.ylyb"
 
 }
