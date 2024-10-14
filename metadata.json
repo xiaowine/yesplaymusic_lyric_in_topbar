@@ -4,6 +4,6 @@
   "shell-version": ["47"],
   "url": "https://github.com/xiaowine/Ylyb",
   "uuid": "Ylyb@xiaowine.github.io",
-  "version": 1,
+  "version": 2,
   "settings-schema": "org.gnome.shell.extensions.ylyb"
 }
