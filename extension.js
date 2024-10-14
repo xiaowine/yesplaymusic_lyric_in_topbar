@@ -2,11 +2,9 @@ import Gio from 'gi://Gio';
 import St from 'gi://St';
 import Soup from 'gi://Soup';
 import GLib from 'gi://GLib';
-import { Extension, gettext as _ } from 'resource:///org/gnome/shell/extensions/extension.js';
+import { Extension,  } from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
-import Settings from './settings.js';  // Import the Settings class from settings.js
-import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
-import * as MessageTray from 'resource:///org/gnome/shell/ui/messageTray.js';
+import Settings from './settings.js';
 
 class HttpClient {
   constructor(settings) {
