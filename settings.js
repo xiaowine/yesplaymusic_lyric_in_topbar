@@ -1,4 +1,4 @@
-class Settings {
+export default class Settings {
     constructor(extension) {
       this.settings = extension.getSettings();
     }
@@ -13,7 +13,7 @@ class Settings {
   
     logMessage(message) {
       if (this.isLoggingEnabled()) {
-        log(message);
+        console.log(message);
       }
     }
-  }export default Settings;
+  };

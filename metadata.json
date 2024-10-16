@@ -2,7 +2,7 @@
   "description": "YesplayMusic lyric output in gnome top bar.",
   "name": "Ylyb",
   "shell-version": ["47"],
-  "url": "https://github.com/xiaowine/Ylyb",
+  "url": "https://github.com/xiaowine/yesplaymusic_lyric_in_topbar",
   "uuid": "Ylyb@xiaowine.github.io",
   "version": 2,
   "settings-schema": "org.gnome.shell.extensions.ylyb"

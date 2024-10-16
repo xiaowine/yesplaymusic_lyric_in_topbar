@@ -5,7 +5,7 @@
 import Gio from 'gi://Gio';
 import Gtk from 'gi://Gtk';
 import Adw from 'gi://Adw';
-import { ExtensionPreferences, gettext as _ } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
 export default class YlybThemePrefs extends ExtensionPreferences {
     fillPreferencesWindow(window) {
@@ -15,7 +15,9 @@ export default class YlybThemePrefs extends ExtensionPreferences {
             icon_name: 'dialog-information-symbolic',
         });
         window.add(page);
-
+        window.connect('close-request', () => {
+            this._settings = null;
+        });
         const group = new Adw.PreferencesGroup({
             title: _('Settings'),
             description: _('Configure the settings of the extension'),
@@ -113,4 +115,5 @@ export default class YlybThemePrefs extends ExtensionPreferences {
             log(`Error saving settings: ${error.message}`);
         }
     }
+
 }
